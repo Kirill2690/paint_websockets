@@ -5,6 +5,7 @@ import {Button} from "@mui/material";
 import RectangleIcon from '@mui/icons-material/Rectangle';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import ClearIcon from '@mui/icons-material/Clear';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const ToolBar = () => {
     return (
@@ -13,6 +14,7 @@ const ToolBar = () => {
             <Button className='toolbar_btn'><RectangleIcon className='toolbar_icon'/></Button>
             <Button className='toolbar_btn'><RadioButtonUncheckedIcon className='toolbar_icon'/></Button>
             <Button className='toolbar_btn'><ClearIcon className='toolbar_icon'/></Button>
+            <Button className='toolbar_btn'><RemoveIcon className='toolbar_icon'/></Button>
 
         </div>
     );
