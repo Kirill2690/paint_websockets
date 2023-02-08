@@ -15,7 +15,6 @@ const ToolBar = () => {
             <Button className='toolbar_btn'><RadioButtonUncheckedIcon className='toolbar_icon'/></Button>
             <Button className='toolbar_btn'><ClearIcon className='toolbar_icon'/></Button>
             <Button className='toolbar_btn'><RemoveIcon className='toolbar_icon'/></Button>
-
         </div>
     );
 };
