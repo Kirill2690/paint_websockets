@@ -2,13 +2,16 @@ import React, {useEffect, useRef} from 'react';
 import '../../style/canvas.scss'
 import {observer} from "mobx-react-lite";
 import stateCanvas from "../../store/stateCanvas";
+import stateTool from "../../store/stateTool";
+import Brush from "../../tools/Brush";
 
 const Canvas = observer(() => {
 
     const canvasRef = useRef()
 
     useEffect(() => {
-        stateCanvas.setCanvas()
+        stateCanvas.setCanvas(canvasRef.current)
+        stateTool.setToll(new Brush(canvasRef.current))
     }, [])
     return (
         <div className='canvas'>
