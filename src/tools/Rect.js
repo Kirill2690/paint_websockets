@@ -22,6 +22,7 @@ export default class Rect extends Tool {
         this.ctx.beginPath()
         this.startX = e.pageX - e.target.offsetLeft;
         this.startY = e.pageY - e.target.offsetTop;
+        this.saved=this.canvas.toDataURL()
 
 
     }
@@ -37,9 +38,19 @@ export default class Rect extends Tool {
     }
 
     draw(x, y, w, h) {
-        this.ctx.rect(x, y, w, h)
-        this.ctx.fill()  //заполнение фигуры
-        this.ctx.stroke() //обводка
+        const img=new Image()
+        img.src=this.saved //изображение с canvas
+        img.onload=()=>{
+            this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height)
+            this.ctx.drawImage(img,0,0,this.canvas.width,this.canvas.height)
+            this.ctx.beginPath()
+            this.ctx.rect(x, y, w, h)
+            this.ctx.fill()  //заполнение фигуры
+            this.ctx.stroke() //обводка
+
+        }
+
+
 
     }
 }
